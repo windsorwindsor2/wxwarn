@@ -2,6 +2,8 @@ import requests
 import threading
 import sys
 
+from wx import get_wx_data
+
 states = ['AL',
 'AK',
 'AZ',
@@ -54,9 +56,7 @@ states = ['AL',
 'WY']
 
 
-def get_wx_data(url):
-    response = requests.get(url)
-    return response.json()
+
 
 url_start = "https://api.weather.gov/alerts/active?area="
 alert_states = []

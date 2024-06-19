@@ -2,9 +2,7 @@ import requests
 import os
 import sys
 
-def get_wx_data(url):
-    response = requests.get(url)
-    return response.json()
+from wx import get_wx_data
 
 def get_warning(wx_data, warning_type = "Tornado Warning") -> list:
 
