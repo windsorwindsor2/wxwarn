@@ -1,4 +1,3 @@
-import requests
 import threading
 import sys
 
@@ -79,6 +78,8 @@ def check_state(state, warning_type = "Tornado Warning"):
 if len(sys.argv) >= 2:
     if "tstorm" in sys.argv[1]:
         warning_type = "Thunderstorm Warning"
+    elif "trop" in sys.argv[1]:
+        warning_type  = "Tropical Storm Warning"     
 else:
     warning_type = "Tornado Warning"
 
@@ -89,5 +90,7 @@ for state in states:
 
 for thread in threads:
     thread.join()
+
+alert_states = sorted(alert_states)
 
 print(alert_states)

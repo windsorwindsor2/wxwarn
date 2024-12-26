@@ -26,6 +26,8 @@ if __name__ == "__main__":
     if len(sys.argv) >= 3:
         if "tstorm" in sys.argv[2]:
             warning_text = get_warning(get_wx_data(url), "Thunderstorm Warning")
+        elif "trop" in sys.argv[2]:
+            warning_text = get_warning(get_wx_data(url), "Tropical Storm Warning")
     else:
         warning_text = get_warning(get_wx_data(url))
     for i in warning_text:
